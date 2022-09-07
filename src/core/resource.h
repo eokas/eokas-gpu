@@ -7,7 +7,10 @@
 
 namespace eokas::gpu
 {
-    class Texture :public Interface, std::enable_shared_from_this<Texture>
+    class Resource :public Interface
+    { };
+
+    class Texture :public Resource
     {
     public:
         enum class Type
@@ -38,6 +41,9 @@ namespace eokas::gpu
         virtual PixelFormat getFormat() const = 0;
         virtual u32_t getUsages() const = 0;
     };
+
+    class Buffer :public Resource
+    { };
 };
 
 #endif//_EOKAS_GPU_RESOURCE_H_
