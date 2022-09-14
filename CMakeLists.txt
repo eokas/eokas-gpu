@@ -33,7 +33,7 @@ aux_source_directory(src/metal SRC_METAL)
 file(GLOB HEADER_FILES "src/core/*.h")
 message("headers " ${HEADER_FILES})
 
-add_library(${PROJECT_NAME} STATIC ${SRC_CORE} ${SRC_D3D12} ${SRC_VULKAN} ${SRC_METAL})
+add_library(${PROJECT_NAME} STATIC ${SRC_CORE} ${SRC_VULKAN})
 target_link_libraries(${PROJECT_NAME} ${LIBS})
 
 install(TARGETS ${PROJECT_NAME} DESTINATION lib/${CMAKE_BUILD_TYPE})
